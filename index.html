@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poker Game</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <center><h1>Poker Game</h1>
+    <h3>Total Pot: <span id="totalPot">0</span></h3></center>
+    <div>
+        <label for="resetAmount">Reset Game:</label>
+        <input type="number" id="resetAmount" min="0" value="1000">
+        <button onclick="resetBalance()">Reset</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Player</th>
+                <th>Balance</th>
+                <th>Added to Pot</th>
+                <th>Amount to add</th>
+                <th>Add</th>
+                <th>Win</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="player1">
+                <td>Player 1</td>
+                <td id="balance1">1000</td>
+                <td id="addedToPot1">0</td>
+                <td><input type="number" id="input1" min="0" value="0"></td>
+                <td><button onclick="addToPot(1)">Add</button></td>
+                <td><button onclick="win(1)">Win</button></td>
+            </tr>
+            <tr id="player2">
+                <td>Player 2</td>
+                <td id="balance2">1000</td>
+                <td id="addedToPot2">0</td>
+                <td><input type="number" id="input2" min="0" value="0"></td>
+                <td><button onclick="addToPot(2)">Add</button></td>
+                <td><button onclick="win(2)">Win</button></td>
+            </tr>
+            <tr id="player3">
+                <td>Player 3</td>
+                <td id="balance3">1000</td>
+                <td id="addedToPot3">0</td>
+                <td><input type="number" id="input3" min="0" value="0"></td>
+                <td><button onclick="addToPot(3)">Add</button></td>
+                <td><button onclick="win(3)">Win</button></td>
+            </tr>
+            <tr id="player4">
+                <td>Player 4</td>
+                <td id="balance4">1000</td>
+                <td id="addedToPot4">0</td>
+                <td><input type="number" id="input4" min="0" value="0"></td>
+                <td><button onclick="addToPot(4)">Add</button></td>
+                <td><button onclick="win(4)">Win</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        let totalPot = 0;
+
+        function addToPot(player) {
+            const inputAmount = parseInt(document.getElementById(`input${player}`).value);
+            const balance = parseInt(document.getElementById(`balance${player}`).textContent);
+            const addedToPot = parseInt(document.getElementById(`addedToPot${player}`).textContent);
+            if (inputAmount > balance) {
+                alert('Not enough balance.');
+            } else {
+                document.getElementById(`balance${player}`).textContent = balance - inputAmount;
+                document.getElementById(`addedToPot${player}`).textContent = addedToPot + inputAmount;
+                totalPot += inputAmount;
+                document.getElementById('totalPot').textContent = totalPot;
+            }
+        }
+
+        function win(player) {
+            const balance = parseInt(document.getElementById(`balance${player}`).textContent);
+            const addedToPot = parseInt(document.getElementById(`addedToPot${player}`).textContent);
+            const newBalance = balance + totalPot;
+            document.getElementById(`balance${player}`).textContent = newBalance;
+            totalPot = 0;
+            document.getElementById('totalPot').textContent = totalPot;
+            document.getElementById(`addedToPot${player}`).textContent = 0;
+            alert(`Player ${player} wins $${totalPot - addedToPot}!`);
+        }
+
+        function resetBalance() {
+            const resetAmount = parseInt(document.getElementById('resetAmount').value);
+            document.getElementById('balance1').textContent = resetAmount;
+            document.getElementById('balance2').textContent = resetAmount;
+            document.getElementById('balance3').textContent = resetAmount;
+            document.getElementById('balance4').textContent = resetAmount;
+        }
+    </script>
+</body>
+</html>
