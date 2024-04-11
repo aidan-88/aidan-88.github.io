@@ -5,19 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poker Game</title>
     <style>
+        body {
+            background-color: #990000;
+            /* This sets the background color of the entire page */
+            color: #fff; /* This sets the text color to white for better readability */
+        }
         table {
             border-collapse: collapse;
             width: 100%;
         }
 
         th, td {
-            border: 1px solid black;
+            font-family: 'Times New Roman', Times, serif;
+            border: 1px solid white;
             padding: 8px;
             text-align: center;
         }
 
         th {
-            background-color: #f2f2f2;
+            background-color: #990000;
         }
 
         button {
@@ -47,7 +53,7 @@
         </thead>
         <tbody>
             <tr id="player1">
-                <td>Player 1</td>
+                <td>Aidan</td>
                 <td id="balance1">1000</td>
                 <td id="addedToPot1">0</td>
                 <td><input type="number" id="input1" min="0" value="0"></td>
@@ -55,7 +61,7 @@
                 <td><button onclick="win(1)">Win</button></td>
             </tr>
             <tr id="player2">
-                <td>Player 2</td>
+                <td>Brandon</td>
                 <td id="balance2">1000</td>
                 <td id="addedToPot2">0</td>
                 <td><input type="number" id="input2" min="0" value="0"></td>
@@ -63,7 +69,7 @@
                 <td><button onclick="win(2)">Win</button></td>
             </tr>
             <tr id="player3">
-                <td>Player 3</td>
+                <td>Ivan</td>
                 <td id="balance3">1000</td>
                 <td id="addedToPot3">0</td>
                 <td><input type="number" id="input3" min="0" value="0"></td>
