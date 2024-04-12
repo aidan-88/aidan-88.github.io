@@ -33,10 +33,10 @@
     </style>
 </head>
 <body>
-    <center><h1>Poker Game</h1>
-    <h3>Total Pot: <span id="totalPot">0</span></h3></center>
+    <center><div style="background-color: white; width: 500px;"><h1>Poker Game</h1>
+    <h3>Total Pot: <span id="totalPot">0</span></h3></div></center>
     <div>
-        <label for="resetAmount">Reset Game:</label>
+        <div style="background-color: white; width: 85px;"><label for="resetAmount">Reset Game:</label></div>
         <input type="number" id="resetAmount" min="0" value="1000">
         <button onclick="resetBalance()">Reset</button>
     </div>
@@ -111,8 +111,10 @@
             document.getElementById(`balance${player}`).textContent = newBalance;
             totalPot = 0;
             document.getElementById('totalPot').textContent = totalPot;
-            document.getElementById(`addedToPot${player}`).textContent = 0;
-            alert(`Player ${player} wins $${totalPot - addedToPot}!`);
+            for (let i = 1; i <= 4; i++) {
+                document.getElementById(`addedToPot${i}`).textContent = 0;
+            }
+            alert(`Player ${player} win`);
         }
 
         function resetBalance() {
