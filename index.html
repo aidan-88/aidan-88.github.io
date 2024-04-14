@@ -27,7 +27,7 @@
         </thead>
         <tbody>
             <tr id="player1">
-                <td>Aidan</td>
+                <td id="name1">Player 1</td>
                 <td id="balance1">1000</td>
                 <td id="addedToPot1">0</td>
                 <td><input type="number" id="input1" min="0" value="0"></td>
@@ -35,7 +35,7 @@
                 <td><button onclick="win(1)">Win</button></td>
             </tr>
             <tr id="player2">
-                <td>Brandon</td>
+                <td id="name2">Player 2</td>
                 <td id="balance2">1000</td>
                 <td id="addedToPot2">0</td>
                 <td><input type="number" id="input2" min="0" value="0"></td>
@@ -43,7 +43,7 @@
                 <td><button onclick="win(2)">Win</button></td>
             </tr>
             <tr id="player3">
-                <td>Ivan</td>
+                <td id="name3">Player 3</td>
                 <td id="balance3">1000</td>
                 <td id="addedToPot3">0</td>
                 <td><input type="number" id="input3" min="0" value="0"></td>
@@ -51,7 +51,7 @@
                 <td><button onclick="win(3)">Win</button></td>
             </tr>
             <tr id="player4">
-                <td>Player 4</td>
+                <td id="name4">Player 4</td>
                 <td id="balance4">1000</td>
                 <td id="addedToPot4">0</td>
                 <td><input type="number" id="input4" min="0" value="0"></td>
@@ -80,6 +80,27 @@
         <label style="background-color: white;" for="customPlayer4">Set Value P4:</label>
         <input type="number" id="customPlayer4" min="0" value="1000">
         <button onclick="setCustomBalance(4)">Set</button>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <label style="background-color: white;" for="customName1">Set Player 1 Name:</label>
+        <input id="customName1">
+        <button onclick="setCustomName(1)">Set</button>
+    </div>
+    <div>
+        <label style="background-color: white;" for="customName2">Set Player 2 Name:</label>
+        <input id="customName2">
+        <button onclick="setCustomName(2)">Set</button>
+    </div>
+    <div>
+        <label style="background-color: white;" for="customName3">Set Player 3 Name:</label>
+        <input id="customName3">
+        <button onclick="setCustomName(3)">Set</button>
+    </div>
+    <div>
+        <label style="background-color: white;" for="customName4">Set Player 4 Name:</label>
+        <input id="customName4">
+        <button onclick="setCustomName(4)">Set</button>
     </div>
 
     <script src="index.js"> </script>

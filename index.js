@@ -62,3 +62,8 @@ function setCustomBalance(player) {
     const customAmount = parseInt(document.getElementById(`customPlayer${player}`).value);
     document.getElementById(`balance${player}`).textContent = customAmount;
 }
+
+function setCustomName(player) {
+    const customName = document.getElementById(`customName${player}`).value;
+    document.getElementById(`name${player}`).textContent = customName
+}
