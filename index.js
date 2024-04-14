@@ -1,5 +1,28 @@
 let totalPot = 0;
 
+function saveBalances() {
+    for (let i = 1; i <= 4; i++) {
+        const balance = parseInt(document.getElementById(`balance${i}`).textContent);
+        localStorage.setItem(`balance${i}`, balance);
+    }
+}
+
+function loadBalances() {
+    for (let i = 1; i <= 4; i++) {
+        const balance = localStorage.getItem(`balance${i}`);
+        if (balance !== null) {
+            document.getElementById(`balance${i}`).textContent = balance;
+        }
+    }
+}
+window.onload = loadBalances;
+
+window.addEventListener('beforeunload', (event) => {
+    saveBalances();
+    event.preventDefault();
+    return '';
+});
+
 function addToPot(player) {
     const inputAmount = parseInt(document.getElementById(`input${player}`).value);
     const balance = parseInt(document.getElementById(`balance${player}`).textContent);
