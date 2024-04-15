@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poker Game</title>
+    <title>Blackjack Game</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <a href="blackjack/blackjack.html" style="text-decoration: underline; color: black; font-weight: bold;">Blackjack Link</a>
+    <a href="../" style="text-decoration: underline; color: black; font-weight: bold;">Poker Link</a>
 
-    <center><div style="background-color: white; width: 500px;"><h1>Poker Game</h1>
-    <h3>Total Pot: <span id="totalPot">0</span></h3></div></center>
+    <center><div style="background-color: white; width: 500px;"><h1>Blackjack Game</h1>
+    <h3 style="color: white;">.</span></h3></div></center>
     <div>
         <div style="background-color: white; width: 85px;"><label for="resetAmount">Reset Game:</label></div>
         <input type="number" id="resetAmount" min="0" value="1000">
@@ -21,44 +21,54 @@
             <tr>
                 <th>Player</th>
                 <th>Balance</th>
-                <th>Added to Pot</th>
-                <th>Amount to add</th>
-                <th>Add</th>
+                <th>Amount Betted</th>
+                <th>Amount to Bet</th>
+                <th>Bet</th>
                 <th>Win</th>
+                <th>x2 Multi</th>
+                <th>Lose</th>
             </tr>
         </thead>
         <tbody>
             <tr id="player1">
                 <td id="name1">Player 1</td>
                 <td id="balance1">1000</td>
-                <td id="addedToPot1">0</td>
+                <td id="amtBetted1">0</td>
                 <td><input type="number" id="input1" min="0" value="0"></td>
-                <td><button onclick="addToPot(1)">Add</button></td>
+                <td><button onclick="bet(1)">Bet</button></td>
                 <td><button onclick="win(1)">Win</button></td>
+                <td><button onclick="timesTwo(1)">x2</button></td>
+                <td><button onclick="lose(1)">Lose</button></td>
             </tr>
             <tr id="player2">
                 <td id="name2">Player 2</td>
                 <td id="balance2">1000</td>
-                <td id="addedToPot2">0</td>
+                <td id="amtBetted2">0</td>
                 <td><input type="number" id="input2" min="0" value="0"></td>
-                <td><button onclick="addToPot(2)">Add</button></td>
+                <td><button onclick="bet(2)">Bet</button></td>
                 <td><button onclick="win(2)">Win</button></td>
+                <td><button onclick="timesTwo(2)">x2</button></td>
+                <td><button onclick="lose(2)">Lose</button></td>
             </tr>
             <tr id="player3">
                 <td id="name3">Player 3</td>
                 <td id="balance3">1000</td>
-                <td id="addedToPot3">0</td>
+                <td id="amtBetted3">0</td>
                 <td><input type="number" id="input3" min="0" value="0"></td>
-                <td><button onclick="addToPot(3)">Add</button></td>
+                <td><button onclick="bet(3)">Bet</button></td>
                 <td><button onclick="win(3)">Win</button></td>
+                <td><button onclick="timesTwo(3)">x2</button></td>
+                <td><button onclick="lose(3)">Lose</button></td>
             </tr>
             <tr id="player4">
                 <td id="name4">Player 4</td>
                 <td id="balance4">1000</td>
-                <td id="addedToPot4">0</td>
+                <td id="amtBetted4">0</td>
                 <td><input type="number" id="input4" min="0" value="0"></td>
-                <td><button onclick="addToPot(4)">Add</button></td>
+                <td><button onclick="bet(4)">Bet</button></td>
                 <td><button onclick="win(4)">Win</button></td>
+                <td><button onclick="timesTwo(4)">x2</button></td>
+                <td><button onclick="lose(4)">Lose</button></td>
             </tr>
         </tbody>
     </table>
