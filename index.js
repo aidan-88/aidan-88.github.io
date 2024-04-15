@@ -29,11 +29,18 @@ function addToPot(player) {
     const addedToPot = parseInt(document.getElementById(`addedToPot${player}`).textContent);
     if (inputAmount > balance) {
         alert('Not enough balance.');
-    } else {
+    } 
+    else if (inputAmount < 0) {
+        alert('Please do not put a negative number')
+    }
+    else if (inputAmount > 0) {
         document.getElementById(`balance${player}`).textContent = balance - inputAmount;
         document.getElementById(`addedToPot${player}`).textContent = addedToPot + inputAmount;
         totalPot += inputAmount;
         document.getElementById('totalPot').textContent = totalPot;
+    }
+    else {
+        alert('That input value will not be accepted')
     }
 }
 
