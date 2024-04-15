@@ -67,6 +67,13 @@ function lose(player) {
     document.getElementById(`amtBetted${player}`).textContent = 0
 }
 
+function blackJack(player) {
+    const amtBetted = parseInt(document.getElementById(`amtBetted${player}`).textContent);
+    const balance = parseInt(document.getElementById(`balance${player}`).textContent);
+    document.getElementById(`balance${player}`).textContent = balance + (amtBetted*1.5)
+    document.getElementById(`amtBetted${player}`).textContent = 0
+}
+
 function resetBalance() {
     const resetAmount = parseInt(document.getElementById('resetAmount').value);
     document.getElementById('balance1').textContent = resetAmount;
