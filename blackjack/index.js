@@ -87,6 +87,25 @@ function setCustomBalance(player) {
     document.getElementById(`balance${player}`).textContent = customAmount;
 }
 
+function steal(player) {
+    const startBalance = parseInt(document.getElementById(`balance1`).textContent);
+    const from2 = parseInt(document.getElementById(`balance2`).textContent);
+    const from3 = parseInt(document.getElementById(`balance3`).textContent);
+
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
+    const random = (getRandomInt(2));
+    if (random == 0) {
+        document.getElementById(`balance1`).textContent = startBalance + 10
+        document.getElementById(`balance2`).textContent = from2 - 10
+    }
+    if (random == 1) {
+        document.getElementById(`balance1`).textContent = startBalance + 10
+        document.getElementById(`balance3`).textContent = from3 - 10
+    }
+}
+
 function setCustomName(player) {
     const customName = document.getElementById(`customName${player}`).value;
     document.getElementById(`name${player}`).textContent = customName
