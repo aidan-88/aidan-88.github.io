@@ -70,7 +70,7 @@ function lose(player) {
 function blackJack(player) {
     const amtBetted = parseInt(document.getElementById(`amtBetted${player}`).textContent);
     const balance = parseInt(document.getElementById(`balance${player}`).textContent);
-    document.getElementById(`balance${player}`).textContent = balance + (amtBetted*1.5)
+    document.getElementById(`balance${player}`).textContent = balance + (amtBetted*1.5) + amtBetted
     document.getElementById(`amtBetted${player}`).textContent = 0
 }
 
