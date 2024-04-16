@@ -5,6 +5,10 @@ function saveBalances() {
         const name = document.getElementById(`name${i}`).textContent;
         localStorage.setItem(`name${i}`, name)
     }
+    for (let i = 1; i<= 4; i++) {
+        const names = document.getElementById(`name${i}`).textContent;
+        localStorage.setItem(`name${i}`, names)
+    }
 }
 
 function loadBalances() {
@@ -16,6 +20,12 @@ function loadBalances() {
         const name = localStorage.getItem(`name${i}`);
         if (name !== null) {
             document.getElementById(`name${i}`).textContent = name;
+        }
+    }
+    for (let i = 1; i <= 4; i++) {
+        const names = localStorage.getItem(`name${i}`);
+        if (balance !== null) {
+            document.getElementById(`name${i}`).textContent = names;
         }
     }
 }
