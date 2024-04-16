@@ -2,6 +2,8 @@ function saveBalances() {
     for (let i = 1; i <= 4; i++) {
         const balance = parseInt(document.getElementById(`balance${i}`).textContent);
         localStorage.setItem(`balance${i}`, balance);
+        const name = document.getElementById(`name${i}`).textContent;
+        localStorage.setItem(`name${i}`, name)
     }
 }
 
@@ -10,6 +12,10 @@ function loadBalances() {
         const balance = localStorage.getItem(`balance${i}`);
         if (balance !== null) {
             document.getElementById(`balance${i}`).textContent = balance;
+        }
+        const name = localStorage.getItem(`name${i}`);
+        if (name !== null) {
+            document.getElementById(`name${i}`).textContent = name;
         }
     }
 }
@@ -109,4 +115,23 @@ function steal(player) {
 function setCustomName(player) {
     const customName = document.getElementById(`customName${player}`).value;
     document.getElementById(`name${player}`).textContent = customName
+}
+
+function steal(player) {
+    const to = parseInt = document.getElementById(`balance1`).textContent;
+    const from1 = parseInt = document.getElementById(`balance2`).textContent;
+    const from2 = parseInt = document.getElementById(`balance3`).textContent;
+    
+    const chosen = Math.random(2)
+    if (chosen = 0) {
+        document.getElementById(`balance1`).textContent = to + 10   
+        document.getElementById(`balance2`).textContent =  from1 - 10
+    }
+    else if (chosen = 1) {
+        document.getElementById(`balance1`).textContent = to + 10 
+        document.getElementById(`balance3`).textContent =  from2- 10
+    }
+    else {
+        alert('Error occured')
+    }
 }
