@@ -6,7 +6,7 @@ function saveBalances() {
         localStorage.setItem(`name${i}`, name)
     }
 }
-
+//Yes
 function loadBalances() {
     for (let i = 1; i <= 4; i++) {
         const balance = localStorage.getItem(`balance${i}`);
